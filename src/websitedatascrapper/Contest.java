@@ -65,10 +65,11 @@ public class Contest {
             Elements ContestsTable=doc.getElementsByClass(urls.CONTEST_CLASS);
            
           
-        for(int i=0;i<ContestsTable.size();i++)    
+        for(int i=0;i<1;i++) //ContestsTable.size();i++)    
         {
          Elements tablerow = ContestsTable.get(i).select("tbody").select("tr");
-         for(int j=0;j<tablerow.size();j++){
+         for(int j=0;j<1;j++)//tablerow.size();j++)
+         {
              {
                  contests.add(fetchFromAPI(tablerow.get(j).select("td").get(0).text()));
              }
