@@ -21,15 +21,16 @@ public class ProblemData {
     public String problem_code;
     public String problem_name;
     public String body;
-    public String[] languages;
+    public String languages;
     public String max_timelimit;
     public String source_sizelimit;
     public String problem_author;
     public String problem_tester;
     public String date_added;
     
+    public ProblemData(){};
     public ProblemData(String contest_name,String status,String problem_code,String problem_name,String body,
-                       String[] languages,String max_timelimit,String source_sizelimit,String problem_author,
+                       String languages,String max_timelimit,String source_sizelimit,String problem_author,
                        String problem_tester,String date_added)
     {
         this.contest_name=contest_name;
@@ -53,7 +54,7 @@ public class ProblemData {
               JSONReader.getString(json,"problem_code"),
               JSONReader.getString(json,"problem_name"),
               JSONReader.getString(json,"body"),
-              JSONReader.getString(json,"languages_supported").split(", "),
+              JSONReader.getString(json,"languages_supported"),
               JSONReader.getString(json,"max_timelimit"),
               JSONReader.getString(json,"source_sizelimit"),
               JSONReader.getString(json,"problem_author"),

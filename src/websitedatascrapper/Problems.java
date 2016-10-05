@@ -47,7 +47,7 @@ public class Problems {
     
     public static ArrayList<Problems> fetchProblems(String contest_code,JSONObject json) throws JSONException
     {
-       ArrayList<Problems> retProblems= new ArrayList<Problems>();
+       ArrayList<Problems> retProblems= new ArrayList<>();
        JSONObject problems= json.getJSONObject("problems");
        Iterator keys=problems.keys();
        while(keys.hasNext())
@@ -58,7 +58,7 @@ public class Problems {
         boolean done=true;
         while(done)
         { try {
-           pdata=readJsonFromUrl(url);
+            pdata=readJsonFromUrl(url);
             done=false;
         } catch (IOException ex) {
             System.out.println("IO ERROR, Fetching Problem data of "+contest_code+" retrying..");

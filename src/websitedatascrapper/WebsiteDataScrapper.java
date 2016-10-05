@@ -5,11 +5,13 @@
  */
 package websitedatascrapper;
 
+import java.sql.Connection;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import websitedatascrapper.Database.DatabaseWorker;
 
 /**
  *
@@ -23,8 +25,8 @@ public class WebsiteDataScrapper {
     public static void main(String[] args) {
         // TODO code application logic here
         
-       // ArrayList<Contest> contests=Contest.fetchContests();
-        Practice practice = new Practice("school",0,2);
+      // ArrayList<Contest> contests=Contest.fetchContests();
+        /*Practice practice = new Practice("easy",0,2);
         Iterator i;
         i=practice.problems.iterator();
         while(i.hasNext())
@@ -33,10 +35,18 @@ public class WebsiteDataScrapper {
             System.out.println("Problem Name "+problem.name+"\t Problem Code "+problem.code);
             
               
-        }
-            
+        }*/
         
-        System.out.println("Done");
+        Connection con = DatabaseWorker.getConnection();
+        
+        Practice practice =DatabaseWorker.getPracticeProblems("hard",10,15);
+            
+        if(con!=null)
+        {
+            System.out.println("Done");
+            DatabaseWorker.closeConnection();
+        }
+        
         
         
     }
